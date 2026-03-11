@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: #e9ecef;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 colunas iguais */
+    grid-template-areas: 
+        "header header header"
+        "card1 card2 card3"
+        "card4 card4 card4"
+        "card5 card6 card7";
+    gap: 25px;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Definição das áreas */
+.header {
+    grid-area: header;
+}
+
+.card1 {
+    grid-area: card1;
+}
+
+.card2 {
+    grid-area: card2;
+}
+
+.card3 {
+    grid-area: card3;
+}
+
+.card4 {
+    grid-area: card4;
+}
+
+.card5 {
+    grid-area: card5;
+}
+
+.card6 {
+    grid-area: card6;
+}
+
+.card7 {
+    grid-area: card7;
+}
+
+/* Estilos comuns dos cards */
+.header, .card {
+    background: white; /* cor base, será sobrescrita */
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.header:hover, .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+}
+
+/* Cores diferentes para cada bloco */
+.header {
+    background-color: #FFD93D;  /* Amarelo */
+}
+
+.card1 {
+    background-color: #6BCB77;  /* Verde */
+}
+
+.card2 {
+    background-color: #4D96FF;  /* Azul */
+}
+
+.card3 {
+    background-color: #FF6B6B;  /* Vermelho coral */
+}
+
+.card4 {
+    background-color: #9D65C9;  /* Roxo */
+}
+
+.card5 {
+    background-color: #FF9F45;  /* Laranja */
+}
+
+.card6 {
+    background-color: #A2D2FF;  /* Azul claro */
+}
+
+.card7 {
+    background-color: #F7C8E0;  /* Rosa */
+}
+
+/* Estilos de texto */
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2d3a4f;
+}
+
+/* Ajuste para cards com apenas "HEADING" no parágrafo */
+.card1 p, .card2 p, .card3 p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1e293b;
+    opacity: 0.9;
+}
+
+/* Responsividade */
+@media (max-width: 1000px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "header header"
+            "card1 card2"
+            "card3 card4"
+            "card5 card6"
+            "card7 card7";
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "card1"
+            "card2"
+            "card3"
+            "card4"
+            "card5"
+            "card6"
+            "card7";
+        gap: 20px;
+    }
+
+    body {
+        padding: 20px;
+    }
+
+    .header, .card {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}

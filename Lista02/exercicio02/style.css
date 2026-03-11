@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    padding: 30px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card {
+    color: white;
+    padding: 25px 20px;
+    border-radius: 10px;
+    flex: 0 1 250px;
+    min-width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Cores diferentes para cada card (colinha) */
+.card:nth-child(1) { background-color: #FF6B6B; }     /* Vermelho coral */
+.card:nth-child(2) { background-color: #4ECDC4; }     /* Verde água */
+.card:nth-child(3) { background-color: #45B7D1; }     /* Azul claro */
+.card:nth-child(4) { background-color: #96CEB4; }     /* Verde menta */
+.card:nth-child(5) { background-color: #FFEAA7; }     /* Amarelo claro */
+.card:nth-child(6) { background-color: #DDA0DD; }     /* Ameixa */
+.card:nth-child(7) { background-color: #FFA07A; }     /* Salmão */
+.card:nth-child(8) { background-color: #9ACD32; }     /* Verde amarelado */
+.card:nth-child(9) { background-color: #FFB6C1; }     /* Rosa claro */
+.card:nth-child(10) { background-color: #87CEEB; }    /* Azul céu */
+.card:nth-child(11) { background-color: #DAA520; }    /* Dourado */
+.card:nth-child(12) { background-color: #CD5C5C; }    /* Vermelho indiano */
+
+/* Ajuste da cor do texto para cards com cores muito claras */
+.card:nth-child(5),
+.card:nth-child(8),
+.card:nth-child(9) {
+    color: #333; 
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .card {
+        flex: 0 1 200px;
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .card {
+        flex: 0 1 100%;
+        min-width: auto;
+    }
+    
+    .card h3 {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,191 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Grid principal */
+        .site {
+            display: grid;
+            grid-template-areas: 
+                "header header"
+                "main sidebar"
+                "footer footer";
+            grid-template-columns: 2fr 1fr;  /* main ocupa 2 partes, sidebar 1 */
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Cabeçalho (área header) */
+        .header {
+            grid-area: header;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0c77e2;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+        }
+
+        .logo {
+            background-color: #f1c40f;
+            padding: 8px 15px;
+            border-radius: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav a {
+            padding: 5px 10px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #0960b8;
+            color: #f1c40f;
+        }
+
+        /* Conteúdo principal (área main) */
+        .main {
+            grid-area: main;
+            background: #ecf0f1;
+            padding: 30px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .main p {
+            font-size: 18px;
+            color: #34495e;
+        }
+
+        .btn {
+            align-self: flex-start;  /* alinhamento à esquerda com flexbox */
+            background-color: #f1c40f;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #d1a700;
+        }
+
+        /* Barra lateral (área sidebar) */
+        .sidebar {
+            grid-area: sidebar;
+            background: #bdc3c7;
+            padding: 30px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar li {
+            font-size: 18px;
+            color: #2c3e50;
+            background: rgba(255,255,255,0.5);
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .sidebar li:hover {
+            background: rgba(255,255,255,0.8);
+            cursor: pointer;
+        }
+
+        /* Rodapé (área footer) */
+        .footer {
+            grid-area: footer;
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 16px;
+        }
+
+        /* Responsividade: em telas menores, sidebar vai para baixo */
+        @media (max-width: 800px) {
+            .site {
+                grid-template-areas: 
+                    "header"
+                    "main"
+                    "sidebar"
+                    "footer";
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .btn {
+                align-self: center; /* centraliza o botão em telas pequenas */
+            }
+        }
