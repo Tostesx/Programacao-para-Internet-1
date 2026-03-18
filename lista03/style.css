@@ -1,0 +1,164 @@
+/* RESET E CONFIGURAÇÕES GLOBAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    background-color: #fafafa;
+}
+
+/* HEADER */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Logo */
+.logo-wrapper {
+    border-radius: 20px;
+    background-color: #ffeb3b;  /* amarelo */
+    padding: 0.5rem 1rem;
+    /* sem border-radius */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #ff9800;  /* laranja no hover */
+}
+
+/* MAIN */
+.site-main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.content-area {
+    margin-bottom: 2rem;
+}
+
+.content-area h1 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* CARDS - GRID NO DESKTOP */
+.cards-container {
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+/* CARD - FLEXBOX INTERNO COM CORES E HOVER */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: #ff9800;
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+    transform: translateY(-3px);
+    background-color: #fff8e1;  /* tom claro de laranja */
+}
+
+.card h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.card p {
+    color: #666;
+}
+
+/* FOOTER */
+.site-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    color: #666;
+}
+
+/* ========== BREAKPOINT TABLET ========== */
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .site-header {
+        padding: 1rem;
+    }
+
+    .main-nav ul {
+        gap: 1rem;
+    }
+}
+
+/* ========== BREAKPOINT MOBILE ========== */
+@media (max-width: 480px) {
+    .site-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .logo-wrapper {
+        text-align: center;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .site-main {
+        padding: 1rem;
+    }
+}
