@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+.contador {
+    font-size: 48px;
+    margin: 20px;
+}
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+.obs {
+    color: gray;
+    font-size: 14px;
+}
