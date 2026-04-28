@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Matriz de Ratings - OMDb</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Ratings dos Episódios (OMDb)</h1>
+        
+        <div class="busca">
+            <input type="text" id="serieInput" placeholder="Digite o nome da série...">
+            <button id="buscarBtn">Buscar</button>
+        </div>
+
+        <div id="erro" class="erro"></div>
+
+        <div id="cabecalho" class="cabecalho" style="display: none;">
+            <img id="poster" src="" alt="Poster da série">
+            <h2 id="tituloSerie"></h2>
+        </div>
+
+        <div id="matrizContainer" style="display: none;">
+            <table id="matrizTabela"></table>
+            <p id="loading" style="display: none;">Carregando temporadas...</p>
+        </div>
+  </div>
+</body>
+</html>
